@@ -48,6 +48,7 @@ export default function LandingPage() {
       id: 'politics',
       title: 'Chính trị',
       icon: <Building2 className='w-8 h-8' />,
+      quote: 'Dân vừa là chủ, vừa là người làm chủ.',
       image: '/images/image1.jpg',
       gradient: 'from-[#D4A017] to-[#F3C44D]',
       content: (
@@ -57,20 +58,14 @@ export default function LandingPage() {
           </p>
           <div className='space-y-3'>
             <div className='flex items-start space-x-3 bg-gradient-to-r from-[#D4A017] p-3 rounded-lg'>
-              <Star className='text-white mt-1' size={16} />
+              <div className='w-2 h-2 bg-gray-300 rounded-full mt-2 group-hover:scale-125 transition-transform'></div>
               <span className='text-gray-300'>Tất cả quyền lợi – quyền hạn thuộc về nhân dân.</span>
             </div>
             <div className='flex items-start space-x-3 bg-gradient-to-r from-[#D4A017] p-3 rounded-lg'>
-              <Star className='text-white mt-1' size={16} />
+              <div className='w-2 h-2 bg-gray-300 rounded-full mt-2 group-hover:scale-125 transition-transform'></div>
               <span className='text-gray-300'>Nhà nước của dân, do dân, vì dân.</span>
             </div>
           </div>
-          <blockquote className='relative pl-6 py-4 bg-gradient-to-r from-[#D4A017] rounded-lg'>
-            <Quote className='absolute left-2 top-2 text-white' size={20} />
-            <p className='italic text-gray-300'>
-              &quot;Dân vừa là chủ, vừa là người làm chủ.&quot;
-            </p>
-          </blockquote>
         </div>
       ),
     },
@@ -78,6 +73,7 @@ export default function LandingPage() {
       id: 'economy',
       title: 'Kinh tế',
       icon: <Users className='w-8 h-8' />,
+      quote: '',
       image: '/images/image2.jpg',
       gradient: 'from-[#D4A017] to-[#F3C44D]',
       content: (
@@ -90,17 +86,17 @@ export default function LandingPage() {
           </div>
           <div className='space-y-3'>
             <div className='flex items-center space-x-3 p-3 bg-gradient-to-r from-[#D4A017] to-transparent rounded-lg hover:shadow-md transition-shadow'>
-              <ArrowRight className='text-white' size={20} />
+              <div className='w-2 h-2 bg-gray-300 rounded-full group-hover:scale-125 transition-transform'></div>
               <span className='text-gray-300'>Xây dựng nền kinh tế phát triển cao.</span>
             </div>
             <div className='flex items-center space-x-3 p-3 bg-gradient-to-r from-[#D4A017] to-transparent rounded-lg hover:shadow-md transition-shadow'>
-              <ArrowRight className='text-white' size={20} />
+              <div className='w-2 h-2 bg-gray-300 rounded-full group-hover:scale-125 transition-transform'></div>
               <span className='text-gray-300'>
                 Công – nông nghiệp hiện đại, khoa học – kỹ thuật tiên tiến.
               </span>
             </div>
             <div className='flex items-center space-x-3 p-3 bg-gradient-to-r from-[#D4A017] to-transparent rounded-lg hover:shadow-md transition-shadow'>
-              <ArrowRight className='text-white' size={20} />
+              <div className='w-2 h-2 bg-gray-300 rounded-full group-hover:scale-125 transition-transform'></div>
               <span className='text-gray-300'>Dựa trên sở hữu toàn dân và tập thể.</span>
             </div>
           </div>
@@ -111,6 +107,7 @@ export default function LandingPage() {
       id: 'culture',
       title: 'Văn hoá',
       icon: <BookOpen className='w-8 h-8' />,
+      quote: '',
       image: '/images/image3.jpg',
       gradient: 'from-[#D4A017] to-[#F3C44D]',
       content: (
@@ -137,38 +134,21 @@ export default function LandingPage() {
       title: 'Quan hệ xã hội',
       icon: <Handshake className='w-8 h-8' />,
       image: '/images/image4.jpg',
+      quote: 'Ai cũng có cơm ăn, áo mặc, ai cũng được học hành',
       gradient: 'from-[#D4A017] to-[#F3C44D]',
       content: (
         <div className='space-y-4'>
-          <blockquote className='relative pl-6 py-4 bg-gradient-to-r from-[#D4A017] to-transparent rounded-lg'>
-            <Quote className='absolute left-2 top-2 text-gray-300' size={20} />
-            <p className='italic text-gray-300 font-medium'>
-              &quot;Ai cũng có cơm ăn, áo mặc, ai cũng được học hành&quot;
-            </p>
-          </blockquote>
           <div className='space-y-3'>
             <div className='flex items-start space-x-3 p-3 bg-gradient-to-r from-[#D4A017] rounded-lg transition-colors'>
-              <div className='min-w-fit'>
-                <div className='w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center'>
-                  <span className='text-white text-xs'>✓</span>
-                </div>
-              </div>
+              <div className='w-2 h-2 bg-gray-300 rounded-full mt-2 group-hover:scale-125 transition-transform'></div>
               <span className='text-gray-300'>Dân chủ, công bằng, văn minh.</span>
             </div>
             <div className='flex items-start space-x-3 p-3 bg-gradient-to-r from-[#D4A017] rounded-lg transition-colors'>
-              <div className='min-w-fit'>
-                <div className='w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center'>
-                  <span className='text-white text-xs'>✓</span>
-                </div>
-              </div>
+              <div className='w-2 h-2 bg-gray-300 rounded-full mt-2 group-hover:scale-125 transition-transform'></div>
               <span className='text-gray-300'>Tôn trọng, bình đẳng, đoàn kết giữa con người.</span>
             </div>
             <div className='flex items-start space-x-3 p-3 bg-gradient-to-r from-[#D4A017] rounded-lg transition-colors'>
-              <div className='min-w-fit'>
-                <div className='w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center'>
-                  <span className='text-white text-xs'>✓</span>
-                </div>
-              </div>
+              <div className='w-2 h-2 bg-gray-300 rounded-full mt-2 group-hover:scale-125 transition-transform'></div>
               <span className='text-gray-300'>
                 Bảo đảm các quyền tự do: học tập, tín ngưỡng, ngôn luận, bầu cử…
               </span>
@@ -374,7 +354,11 @@ export default function LandingPage() {
                     <div className='absolute inset-0 flex flex-col justify-end p-8'>
                       <div className='text-white'>{card.icon}</div>
                       <h3 className='text-3xl font-bold text-white mt-4'>{card.title}</h3>
-                      <p className='text-gray-300 mt-2'>Nhấn để xem chi tiết</p>
+                      {card.quote && (
+                        <h4 className='text-lg font-medium italic text-white mt-4'>
+                          &quot;{card.quote}&quot;
+                        </h4>
+                      )}
                     </div>
                   </div>
 
@@ -410,7 +394,7 @@ export default function LandingPage() {
         <div className='max-w-7xl mx-auto'>
           <h2 className='text-4xl md:text-5xl font-bold text-center mb-4' data-aos='fade-down'>
             <span className='bg-gradient-to-r from-[#D4A017] to-[#F3C44D] bg-clip-text text-transparent'>
-              Động lực Chủ nghĩa xã hội
+              Động lực của Chủ nghĩa xã hội
             </span>
           </h2>
           <p className='text-xl text-center text-gray-400 mb-16' data-aos='fade-up'>
