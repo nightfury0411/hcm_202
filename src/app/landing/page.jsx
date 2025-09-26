@@ -33,6 +33,8 @@ export default function LandingPage() {
   });
 
   const [showScroll, setShowScroll] = useState(false);
+  const [selectedAnswers, setSelectedAnswers] = useState({});
+  const [showResults, setShowResults] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +51,7 @@ export default function LandingPage() {
       title: 'Chính trị',
       icon: <Building2 className='w-8 h-8' />,
       quote: 'Dân vừa là chủ, vừa là người làm chủ.',
-      image: '/images/image1.jpg',
+      image: '/images/image9.jpg',
       gradient: 'from-[#D4A017] to-[#F3C44D]',
       content: (
         <div className='space-y-4'>
@@ -213,6 +215,85 @@ export default function LandingPage() {
     }));
   };
 
+  const quizQuestions = [
+    {
+      id: 1,
+      question: "Hãy liệt kê bốn quan điểm nền tảng trong tư tưởng Hồ Chí Minh về chủ nghĩa xã hội.",
+      options: [
+        "Dân chủ – Nhân dân làm chủ; Công bằng – Nhân đạo – Hạnh phúc; Kinh tế phát triển – Văn hóa, giáo dục nâng cao; Đạo đức – Lối sống mới",
+        "Độc lập dân tộc; Chủ nghĩa tập thể; Sùng bái cá nhân; Kinh tế chỉ huy",
+        "Dân chủ hình thức; Phát triển quân sự; Công nghiệp hóa bằng mọi giá; Đề cao chủ nghĩa cá nhân",
+        "Chủ nghĩa xã hội là không cần dân chủ; Kinh tế – văn hóa tách biệt; Đạo đức chỉ dành cho cán bộ; Hạnh phúc chỉ dành cho giai cấp công nhân"
+      ],
+      correct: 0
+    },
+    {
+      id: 2,
+      question: "Theo Hồ Chí Minh, nền kinh tế xã hội chủ nghĩa cần được xây dựng dựa trên cơ sở nào?",
+      options: [
+        "Sở hữu toàn dân và tập thể",
+        "Sở hữu tư nhân tuyệt đối",
+        "Sở hữu của tầng lớp quý tộc, địa chủ",
+        "Sở hữu hoàn toàn của nước ngoài"
+      ],
+      correct: 0
+    },
+    {
+      id: 3,
+      question: "Hồ Chí Minh khẳng định: \"Muốn xây dựng chủ nghĩa xã hội, trước hết cần có …\"",
+      options: [
+        "Con người xã hội chủ nghĩa",
+        "Nhiều tài nguyên thiên nhiên",
+        "Chủ nghĩa cá nhân phát triển",
+        "Sức mạnh quân sự áp đảo"
+      ],
+      correct: 0
+    },
+    {
+      id: 4,
+      question: "Một trong những nguyên tắc xây dựng CNXH trong thời kỳ quá độ mà Hồ Chí Minh nhấn mạnh là gì?",
+      options: [
+        "Dựa hoàn toàn vào nước ngoài",
+        "Xây phải đi đôi với chống",
+        "Tách rời độc lập dân tộc và CNXH",
+        "Bỏ qua chủ nghĩa Mác – Lênin"
+      ],
+      correct: 1
+    },
+    {
+      id: 5,
+      question: "Đặc điểm to lớn nhất của thời kỳ quá độ ở Việt Nam là gì?",
+      options: [
+        "Từ một nước công nghiệp phát triển lên CNXH",
+        "Từ một nước thuộc địa nửa phong kiến thành tư bản chủ nghĩa",
+        "Từ một nước nông nghiệp lạc hậu tiến thẳng lên CNXH, không qua tư bản chủ nghĩa",
+        "Từ một nước phong kiến đi thẳng lên cộng sản chủ nghĩa"
+      ],
+      correct: 2
+    }
+  ];
+
+  const handleAnswerSelect = (questionId, optionIndex) => {
+    setSelectedAnswers(prev => ({
+      ...prev,
+      [questionId]: optionIndex
+    }));
+  };
+
+  const handleSubmitQuiz = () => {
+    setShowResults(true);
+  };
+
+  const calculateScore = () => {
+    let score = 0;
+    quizQuestions.forEach(question => {
+      if (selectedAnswers[question.id] === question.correct) {
+        score++;
+      }
+    });
+    return score;
+  };
+
   return (
     <div className='min-h-screen bg-[#1A1A1A] text-gray-100'>
       <header className='bg-[#1A1A1A] shadow-sm sticky top-0 z-50 border-b border-gray-800'>
@@ -228,7 +309,9 @@ export default function LandingPage() {
               { id: 'overview', label: 'Tổng quan' },
               { id: 'video', label: 'Video' },
               { id: 'goals', label: 'Mục tiêu' },
+              { id: 'hochiminh', label: 'Quan niệm HCM' },
               { id: 'motivation', label: 'Động lực' },
+              { id: 'quiz', label: 'Mini Quiz' },
             ].map(item => (
               <a
                 key={item.id}
@@ -386,6 +469,116 @@ export default function LandingPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id='hochiminh' className='py-20 px-4 bg-[#1A1A1A]'>
+        <div className='max-w-7xl mx-auto'>
+          <h2 className='text-4xl md:text-5xl font-bold text-center mb-4' data-aos='fade-down'>
+            <span className='bg-gradient-to-r from-[#D4A017] to-[#F3C44D] bg-clip-text text-transparent'>
+              I. Quan niệm của Hồ Chí Minh về CNXH
+            </span>
+          </h2>
+          <p className='text-xl text-center text-gray-400 mb-16' data-aos='fade-up'>
+            Tư tưởng tiến bộ về con đường xây dựng xã hội mới
+          </p>
+
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+            <div data-aos='fade-right'>
+              <div className='relative rounded-2xl overflow-hidden shadow-xl'>
+                <img
+                  src='/images/image9.jpg'
+                  alt='Hồ Chí Minh'
+                  className='w-full h-96 object-cover'
+                />
+                <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent'></div>
+                <div className='absolute bottom-6 left-6 right-6'>
+                  <p className='text-white text-lg font-medium italic'>
+                    "Chế độ xã hội chủ nghĩa là chế độ do dân, vì dân và của dân"
+                  </p>
+                  <p className='text-gray-300 text-sm mt-2'>- Chủ tịch Hồ Chí Minh</p>
+                </div>
+              </div>
+            </div>
+
+            <div data-aos='fade-left'>
+              <div className='space-y-6'>
+                <div className='bg-[#272626] rounded-xl p-6 border border-[#D4A017]/20'>
+                  <h3 className='text-2xl font-bold text-gray-100 mb-4 flex items-center'>
+                    <div className='w-2 h-2 bg-gradient-to-r from-[#D4A017] to-[#F3C44D] rounded-full mr-3'></div>
+                    Bản chất của CNXH
+                  </h3>
+                  <div className='space-y-3 text-gray-300'>
+                    <p className='flex items-start'>
+                      <Quote className='w-4 h-4 text-[#D4A017] mt-1 mr-2 flex-shrink-0' />
+                      Chế độ xã hội do dân, vì dân và của dân
+                    </p>
+                    <p className='flex items-start'>
+                      <Quote className='w-4 h-4 text-[#D4A017] mt-1 mr-2 flex-shrink-0' />
+                      Nhân dân lao động làm chủ xã hội
+                    </p>
+                    <p className='flex items-start'>
+                      <Quote className='w-4 h-4 text-[#D4A017] mt-1 mr-2 flex-shrink-0' />
+                      Xóa bỏ chế độ áp bức bóc lột con người
+                    </p>
+                  </div>
+                </div>
+
+                <div className='bg-[#272626] rounded-xl p-6 border border-[#D4A017]/20'>
+                  <h3 className='text-2xl font-bold text-gray-100 mb-4 flex items-center'>
+                    <div className='w-2 h-2 bg-gradient-to-r from-[#D4A017] to-[#F3C44D] rounded-full mr-3'></div>
+                    Đặc điểm của CNXH Việt Nam
+                  </h3>
+                  <div className='space-y-3 text-gray-300'>
+                    <p className='flex items-start'>
+                      <Star className='w-4 h-4 text-[#D4A017] mt-1 mr-2 flex-shrink-0' />
+                      Kết hợp với truyền thống dân tộc
+                    </p>
+                    <p className='flex items-start'>
+                      <Star className='w-4 h-4 text-[#D4A017] mt-1 mr-2 flex-shrink-0' />
+                      Phù hợp điều kiện Việt Nam
+                    </p>
+                    <p className='flex items-start'>
+                      <Star className='w-4 h-4 text-[#D4A017] mt-1 mr-2 flex-shrink-0' />
+                      Lấy con người làm trung tâm
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='mt-16 grid grid-cols-1 md:grid-cols-3 gap-8'>
+            <div className='text-center' data-aos='fade-up' data-aos-delay='100'>
+              <div className='w-16 h-16 bg-gradient-to-r from-[#D4A017] to-[#F3C44D] rounded-full flex items-center justify-center mx-auto mb-4'>
+                <Users className='w-8 h-8 text-gray-900' />
+              </div>
+              <h4 className='text-xl font-bold text-gray-100 mb-3'>Dân chủ XHCN</h4>
+              <p className='text-gray-400'>
+                Nhân dân lao động làm chủ mọi mặt của đời sống xã hội
+              </p>
+            </div>
+
+            <div className='text-center' data-aos='fade-up' data-aos-delay='200'>
+              <div className='w-16 h-16 bg-gradient-to-r from-[#D4A017] to-[#F3C44D] rounded-full flex items-center justify-center mx-auto mb-4'>
+                <Building2 className='w-8 h-8 text-gray-900' />
+              </div>
+              <h4 className='text-xl font-bold text-gray-100 mb-3'>Kinh tế XHCN</h4>
+              <p className='text-gray-400'>
+                Phát triển kinh tế vì mục tiêu nâng cao đời sống nhân dân
+              </p>
+            </div>
+
+            <div className='text-center' data-aos='fade-up' data-aos-delay='300'>
+              <div className='w-16 h-16 bg-gradient-to-r from-[#D4A017] to-[#F3C44D] rounded-full flex items-center justify-center mx-auto mb-4'>
+                <Heart className='w-8 h-8 text-gray-900' />
+              </div>
+              <h4 className='text-xl font-bold text-gray-100 mb-3'>Con người XHCN</h4>
+              <p className='text-gray-400'>
+                Hình thành con người mới có đạo đức, tri thức và lối sống văn minh
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -667,6 +860,90 @@ export default function LandingPage() {
     </div>
   </div>
 </section>
+
+<section id='quiz' className='py-20 px-4 bg-[#1A1A1A]'>
+        <div className='max-w-4xl mx-auto'>
+          <h2 className='text-4xl md:text-5xl font-bold text-center mb-4' data-aos='fade-down'>
+            <span className='bg-gradient-to-r from-[#D4A017] to-[#F3C44D] bg-clip-text text-transparent'>
+              Mini Quiz
+            </span>
+          </h2>
+          <p className='text-xl text-center text-gray-400 mb-16' data-aos='fade-up'>
+            Kiểm tra kiến thức về Chủ nghĩa xã hội
+          </p>
+
+          <div className='space-y-8'>
+            {quizQuestions.map((question, index) => (
+              <div key={question.id} className='bg-[#272626] rounded-xl p-6 border border-[#D4A017]/20' data-aos='fade-up' data-aos-delay={index * 100}>
+                <h3 className='text-xl font-bold text-gray-100 mb-6'>
+                  <span className='bg-gradient-to-r from-[#D4A017] to-[#F3C44D] bg-clip-text text-transparent'>
+                    Câu {question.id}:
+                  </span> {question.question}
+                </h3>
+
+                <div className='space-y-3'>
+                  {question.options.map((option, optionIndex) => (
+                    <label key={optionIndex} className='flex items-start space-x-3 cursor-pointer p-3 rounded-lg hover:bg-[#333333] transition-colors'>
+                      <input
+                        type='radio'
+                        name={`question-${question.id}`}
+                        value={optionIndex}
+                        checked={selectedAnswers[question.id] === optionIndex}
+                        onChange={() => handleAnswerSelect(question.id, optionIndex)}
+                        className='mt-1 text-[#D4A017] focus:ring-[#D4A017]'
+                      />
+                      <span className={`text-gray-300 ${selectedAnswers[question.id] === optionIndex ? 'text-[#F3C44D]' : ''}`}>
+                        {String.fromCharCode(97 + optionIndex)}) {option}
+                      </span>
+                      {showResults && optionIndex === question.correct && (
+                        <span className='text-green-500 ml-2'>✓</span>
+                      )}
+                      {showResults && selectedAnswers[question.id] === optionIndex && optionIndex !== question.correct && (
+                        <span className='text-red-500 ml-2'>✗</span>
+                      )}
+                    </label>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className='text-center mt-12'>
+            {!showResults ? (
+              <button
+                onClick={handleSubmitQuiz}
+                disabled={Object.keys(selectedAnswers).length !== quizQuestions.length}
+                className='px-8 py-4 bg-gradient-to-r from-[#D4A017] to-[#F3C44D] text-gray-900 font-bold rounded-full
+                          hover:scale-105 transition-transform duration-300 disabled:opacity-50 disabled:cursor-not-allowed'
+              >
+                Nộp bài
+              </button>
+            ) : (
+              <div className='space-y-4'>
+                <div className='text-2xl font-bold'>
+                  <span className='bg-gradient-to-r from-[#D4A017] to-[#F3C44D] bg-clip-text text-transparent'>
+                    Kết quả: {calculateScore()}/{quizQuestions.length}
+                  </span>
+                </div>
+                <div className='text-lg text-gray-300'>
+                  {calculateScore() === quizQuestions.length ? 'Xuất sắc! 🎉' :
+                   calculateScore() >= quizQuestions.length * 0.8 ? 'Tốt! 👏' :
+                   calculateScore() >= quizQuestions.length * 0.6 ? 'Khá! 👍' : 'Cần cố gắng thêm! 💪'}
+                </div>
+                <button
+                  onClick={() => {
+                    setSelectedAnswers({});
+                    setShowResults(false);
+                  }}
+                  className='px-6 py-3 bg-[#333333] text-gray-100 rounded-full hover:bg-[#444444] transition-colors'
+                >
+                  Làm lại
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
 
       <footer className='bg-[#1A1A1A] text-white py-12 px-4 border-t border-gray-800'>
         <div className='max-w-7xl mx-auto text-center'>
