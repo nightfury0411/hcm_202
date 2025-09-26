@@ -395,89 +395,11 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section id='goals' className='py-20 px-4 bg-[#1A1A1A]'>
-        <div className='max-w-7xl mx-auto'>
-          <h2 className='text-4xl md:text-5xl font-bold text-center mb-16' data-aos='fade-down'>
-            <span className='bg-gradient-to-r from-[#D4A017] to-[#F3C44D] bg-clip-text text-transparent'>
-              Mục tiêu của Chủ nghĩa xã hội
-            </span>
-          </h2>
-
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-            {cards.map((card, index) => (
-              <div
-                key={card.id}
-                className='relative h-[450px] cursor-pointer'
-                onClick={() => handleFlip(card.id)}
-                style={{ perspective: '1000px' }}
-                data-aos='flip-left'
-                data-aos-delay={index * 200}
-              >
-                <div
-                  className={`relative w-full h-full transition-transform duration-700 transform-gpu preserve-3d ${
-                    flippedCards[card.id] ? 'rotate-y-180' : ''
-                  }`}
-                  style={{
-                    transformStyle: 'preserve-3d',
-                  }}
-                >
-                  {/* Front */}
-                  <div
-                    className='absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden shadow-xl bg-gray-800'
-                    style={{ backfaceVisibility: 'hidden' }}
-                  >
-                    <img
-                      src={card.image}
-                      alt={card.title}
-                      className='w-full h-full object-cover opacity-80'
-                    />
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-t ${card.gradient} opacity-70`}
-                    ></div>
-                    <div className='absolute inset-0 flex flex-col justify-end p-8'>
-                      <div className='text-white'>{card.icon}</div>
-                      <h3 className='text-3xl font-bold text-white mt-4'>{card.title}</h3>
-                      {card.quote && (
-                        <h4 className='text-lg font-medium italic text-white mt-4'>
-                          &quot;{card.quote}&quot;
-                        </h4>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Back */}
-                  <div
-                    className='absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-[#272626] shadow-xl p-8 overflow-y-auto'
-                    style={{
-                      backfaceVisibility: 'hidden',
-                      transform: 'rotateY(180deg)',
-                    }}
-                  >
-                    <div className='h-full flex flex-col'>
-                      <div className='flex items-center space-x-3 mb-6'>
-                        <div className={`p-3 rounded-lg bg-gradient-to-r ${card.gradient}`}>
-                          <div className='text-gray-900'>{card.icon}</div>
-                        </div>
-                        <h3 className='text-2xl font-bold text-gray-100'>{card.title}</h3>
-                      </div>
-                      <div className='flex-1 text-gray-300'>{card.content}</div>
-                      <div className='mt-6 text-center'>
-                        <p className='text-sm text-gray-400'>Nhấn để quay lại</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id='hochiminh' className='py-20 px-4 bg-[#1A1A1A]'>
         <div className='max-w-7xl mx-auto'>
           <h2 className='text-4xl md:text-5xl font-bold text-center mb-4' data-aos='fade-down'>
             <span className='bg-gradient-to-r from-[#D4A017] to-[#F3C44D] bg-clip-text text-transparent'>
-              I. Quan niệm của Hồ Chí Minh về CNXH
+              Quan niệm của Hồ Chí Minh về CNXH
             </span>
           </h2>
           <p className='text-xl text-center text-gray-400 mb-16' data-aos='fade-up'>
@@ -579,6 +501,84 @@ export default function LandingPage() {
                 Hình thành con người mới có đạo đức, tri thức và lối sống văn minh
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id='goals' className='py-20 px-4 bg-[#1A1A1A]'>
+        <div className='max-w-7xl mx-auto'>
+          <h2 className='text-4xl md:text-5xl font-bold text-center mb-16' data-aos='fade-down'>
+            <span className='bg-gradient-to-r from-[#D4A017] to-[#F3C44D] bg-clip-text text-transparent'>
+              Mục tiêu của Chủ nghĩa xã hội
+            </span>
+          </h2>
+
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+            {cards.map((card, index) => (
+              <div
+                key={card.id}
+                className='relative h-[450px] cursor-pointer'
+                onClick={() => handleFlip(card.id)}
+                style={{ perspective: '1000px' }}
+                data-aos='flip-left'
+                data-aos-delay={index * 200}
+              >
+                <div
+                  className={`relative w-full h-full transition-transform duration-700 transform-gpu preserve-3d ${
+                    flippedCards[card.id] ? 'rotate-y-180' : ''
+                  }`}
+                  style={{
+                    transformStyle: 'preserve-3d',
+                  }}
+                >
+                  {/* Front */}
+                  <div
+                    className='absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden shadow-xl bg-gray-800'
+                    style={{ backfaceVisibility: 'hidden' }}
+                  >
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className='w-full h-full object-cover opacity-80'
+                    />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-t ${card.gradient} opacity-70`}
+                    ></div>
+                    <div className='absolute inset-0 flex flex-col justify-end p-8'>
+                      <div className='text-white'>{card.icon}</div>
+                      <h3 className='text-3xl font-bold text-white mt-4'>{card.title}</h3>
+                      {card.quote && (
+                        <h4 className='text-lg font-medium italic text-white mt-4'>
+                          &quot;{card.quote}&quot;
+                        </h4>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Back */}
+                  <div
+                    className='absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-[#272626] shadow-xl p-8 overflow-y-auto'
+                    style={{
+                      backfaceVisibility: 'hidden',
+                      transform: 'rotateY(180deg)',
+                    }}
+                  >
+                    <div className='h-full flex flex-col'>
+                      <div className='flex items-center space-x-3 mb-6'>
+                        <div className={`p-3 rounded-lg bg-gradient-to-r ${card.gradient}`}>
+                          <div className='text-gray-900'>{card.icon}</div>
+                        </div>
+                        <h3 className='text-2xl font-bold text-gray-100'>{card.title}</h3>
+                      </div>
+                      <div className='flex-1 text-gray-300'>{card.content}</div>
+                      <div className='mt-6 text-center'>
+                        <p className='text-sm text-gray-400'>Nhấn để quay lại</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
