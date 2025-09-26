@@ -453,6 +453,221 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Section: Thời kỳ quá độ */}
+<section id='transition-period' className='py-20 px-4 bg-[#1A1A1A]'>
+  <div className='max-w-7xl mx-auto'>
+    {/* Main Title */}
+    <h2 className='text-4xl md:text-5xl font-bold text-center mb-16' data-aos='fade-down'>
+      <span className='bg-gradient-to-r from-[#D4A017] to-[#F3C44D] bg-clip-text text-transparent'>
+        Thời kỳ quá độ lên Chủ nghĩa xã hội
+      </span>
+    </h2>
+
+    {/* Giới thiệu: Tính chất + Đặc điểm */}
+    <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20' data-aos='fade-up'>
+      <div className='space-y-8'>
+        {/* Tính chất */}
+        <div className='bg-[#272626] rounded-2xl p-8 border border-[#D4A017]/20 hover:border-[#D4A017]/40 transition-all duration-300'>
+          <div className='flex items-center mb-6'>
+            <div className='p-3 rounded-lg bg-gradient-to-r from-[#D4A017] to-[#F3C44D]'>
+              <Star className='w-8 h-8 text-gray-900' />
+            </div>
+            <h3 className='text-2xl font-bold ml-4 text-gray-100'>Tính chất</h3>
+          </div>
+          <p className='text-gray-300 leading-relaxed text-lg'>
+            Chủ tịch Hồ Chí Minh đã nhận định thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là một thời kỳ{' '}
+            <span className='text-[#F3C44D] font-semibold italic'>
+              "cải biến sâu sắc nhất nhưng phức tạp, lâu dài, khó khăn, gian khổ."
+            </span>
+          </p>
+        </div>
+
+        {/* Đặc điểm */}
+        <div className='bg-[#272626] rounded-2xl p-8 border border-[#D4A017]/20 hover:border-[#D4A017]/40 transition-all duration-300'>
+          <div className='flex items-center mb-6'>
+            <div className='p-3 rounded-lg bg-gradient-to-r from-[#D4A017] to-[#F3C44D]'>
+              <ArrowRight className='w-8 h-8 text-gray-900' />
+            </div>
+            <h3 className='text-2xl font-bold ml-4 text-gray-100'>Đặc điểm</h3>
+          </div>
+          <p className='text-gray-300 leading-relaxed text-lg'>
+            Đặc điểm to lớn nhất của thời kỳ quá độ ở Việt Nam là từ một nước nông nghiệp lạc hậu tiến thẳng lên chủ nghĩa xã hội,{' '}
+            <span className='text-[#F3C44D] font-semibold'>
+              không trải qua giai đoạn phát triển tư bản chủ nghĩa.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      {/* Hình minh họa */}
+      <div className='flex items-center justify-center' data-aos='fade-left'>
+        <div className='relative rounded-2xl overflow-hidden shadow-xl group'>
+          <img
+            src='/images\HCM_XHCN.jpg'
+            alt='Tư tưởng Hồ Chí Minh về thời kỳ quá độ'
+            className='w-full h-80 lg:h-96 object-cover transform group-hover:scale-110 transition-transform duration-500'
+            onError={(e) => {
+              e.target.src = 'https://via.placeholder.com/600x400/D4A017/FFFFFF?text=Tư+tưởng+Hồ+Chí+Minh';
+            }}
+          />
+          <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent'></div>
+          <div className='absolute bottom-6 left-6 right-6'>
+            <p className='text-white text-lg font-medium'>
+              Con đường phát triển đặc biệt của Việt Nam
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Nhiệm vụ */}
+    <div className='mb-20'>
+      <h3 className='text-3xl md:text-4xl font-bold text-center mb-4' data-aos='fade-up'>
+        <span className='bg-gradient-to-r from-[#D4A017] to-[#F3C44D] bg-clip-text text-transparent'>
+          Nhiệm vụ của thời kỳ quá độ
+        </span>
+      </h3>
+      <p className='text-xl text-center text-gray-400 mb-12 max-w-4xl mx-auto' data-aos='fade-up' data-aos-delay='200'>
+        Đấu tranh cải tạo, xóa bỏ tàn tích của chế độ xã hội cũ, xây dựng các yếu tố mới phù hợp với quy luật tiến lên chủ nghĩa xã hội
+      </p>
+
+      <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6'>
+        {[
+          {
+            icon: <Building2 className='w-8 h-8' />,
+            title: 'Chính trị',
+            content: 'Xây dựng được chế độ dân chủ vì đây là bản chất của chủ nghĩa xã hội',
+            gradient: 'from-[#D4A017] to-[#F3C44D]',
+            delay: 100
+          },
+          {
+            icon: <Users className='w-8 h-8' />,
+            title: 'Kinh tế',
+            content: 'Cải tạo nền kinh tế cũ, xây dựng nền kinh tế mới có công nghiệp và nông nghiệp hiện đại',
+            gradient: 'from-[#D4A017] to-[#F3C44D]',
+            delay: 200
+          },
+          {
+            icon: <BookOpen className='w-8 h-8' />,
+            title: 'Văn hóa',
+            content: 'Tẩy trừ mọi di tích thuộc địa và ảnh hưởng nô dịch của văn hóa đế quốc; phát triển văn hóa dân tộc',
+            gradient: 'from-[#D4A017] to-[#F3C44D]',
+            delay: 300
+          },
+          {
+            icon: <Handshake className='w-8 h-8' />,
+            title: 'Quan hệ xã hội',
+            content: 'Thay đổi triệt để những quan hệ cũ; xây dựng xã hội dân chủ, công bằng, văn minh',
+            gradient: 'from-[#D4A017] to-[#F3C44D]',
+            delay: 400
+          }
+        ].map((task, index) => (
+          <div
+            key={index}
+            className='bg-[#272626] rounded-2xl p-6 border border-[#D4A017]/20 hover:border-[#D4A017]/40 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl group'
+            data-aos='flip-up'
+            data-aos-delay={task.delay}
+          >
+            <div className={`p-3 rounded-lg bg-gradient-to-r ${task.gradient} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+              <div className='text-white'>{task.icon}</div>
+            </div>
+            <h4 className='text-xl font-bold text-gray-100 mb-3 group-hover:text-[#F3C44D] transition-colors'>
+              {task.title}
+            </h4>
+            <p className='text-gray-300 text-sm leading-relaxed'>{task.content}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Nguyên tắc xây dựng */}
+    <div>
+      <h3 className='text-3xl md:text-4xl font-bold text-center mb-4' data-aos='fade-up'>
+        <span className='bg-gradient-to-r from-[#D4A017] to-[#F3C44D] bg-clip-text text-transparent'>
+          Nguyên tắc xây dựng chủ nghĩa xã hội
+        </span>
+      </h3>
+      <p className='text-xl text-center text-gray-400 mb-12' data-aos='fade-up' data-aos-delay='200'>
+        Bốn nguyên tắc cơ bản trong thời kỳ quá độ
+      </p>
+
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-8' data-aos='fade-up' data-aos-delay='400'>
+        {[
+          {
+            number: 'I',
+            icon: <BookOpen className='w-6 h-6' />,
+            title: 'Nền tảng Mác - Lênin',
+            content: 'Mọi tư tưởng, hành động phải được thực hiện trên nền tảng chủ nghĩa Mác - Lênin.',
+            delay: 100
+          },
+          {
+            number: 'II',
+            icon: <Shield className='w-6 h-6' />,
+            title: 'Độc lập dân tộc',
+            content: 'Phải giữ vững độc lập dân tộc trong mọi hoàn cảnh và điều kiện.',
+            delay: 200
+          },
+          {
+            number: 'III',
+            icon: <Link className='w-6 h-6' />,
+            title: 'Đoàn kết quốc tế',
+            content: 'Phải đoàn kết, học tập kinh nghiệm của các nước anh em xã hội chủ nghĩa.',
+            delay: 300
+          },
+          {
+            number: 'IV',
+            icon: <ArrowRight className='w-6 h-6' />,
+            title: 'Xây dựng & đấu tranh',
+            content: 'Xây phải đi đôi với chống - vừa xây dựng cái mới, vừa đấu tranh chống cái cũ.',
+            delay: 400
+          }
+        ].map((principle, index) => (
+          <div
+            key={index}
+            className='relative bg-[#272626] rounded-2xl p-8 border border-[#D4A017]/20 hover:border-[#D4A017]/40 transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-xl group'
+            data-aos='zoom-in'
+            data-aos-delay={principle.delay}
+          >
+            {/* Roman Number Badge */}
+            <div className='absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-[#D4A017] to-[#F3C44D] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300'>
+              <span className='text-gray-900 font-bold text-lg'>{principle.number}</span>
+            </div>
+            
+            <div className='flex items-start space-x-4 mt-2'>
+              <div className='p-2 rounded-lg bg-gradient-to-r from-[#D4A017] to-[#F3C44D] flex-shrink-0 group-hover:scale-110 transition-transform duration-300'>
+                <div className='text-gray-900'>{principle.icon}</div>
+              </div>
+              <div className='flex-1'>
+                <h4 className='text-xl font-bold text-gray-100 mb-2 group-hover:text-[#F3C44D] transition-colors'>
+                  {principle.title}
+                </h4>
+                <p className='text-gray-300 leading-relaxed'>{principle.content}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Decorative Quote Section */}
+    <div className='relative mt-20'>
+      <div className='absolute inset-0 flex items-center justify-center opacity-5'>
+        <div className='w-96 h-96 bg-gradient-to-r from-[#D4A017] to-[#F3C44D] rounded-full blur-3xl'></div>
+      </div>
+      <div className='relative text-center py-16' data-aos='fade-up'>
+        <Quote className='w-12 h-12 text-[#D4A017] mx-auto mb-6 opacity-60' />
+        <blockquote className='text-2xl md:text-3xl font-light text-gray-200 italic max-w-4xl mx-auto leading-relaxed mb-6'>
+          "Con đường phát triển của Việt Nam là một con đường đặc biệt, 
+          từ một nước nông nghiệp lạc hậu tiến thẳng lên chủ nghĩa xã hội"
+        </blockquote>
+        <cite className='text-lg text-[#F3C44D] font-medium not-italic'>
+          — Tư tưởng Hồ Chí Minh —
+        </cite>
+      </div>
+    </div>
+  </div>
+</section>
+
       <footer className='bg-[#1A1A1A] text-white py-12 px-4 border-t border-gray-800'>
         <div className='max-w-7xl mx-auto text-center'>
           <div className='flex justify-center mb-6'>
